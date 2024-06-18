@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/DebugdDen-0.0.1-SNAPSHOT.jar debugden.jar
+COPY --from=build /target/DebugDen-0.0.1-SNAPSHOT.jar debugden.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "debugden.jar"]
